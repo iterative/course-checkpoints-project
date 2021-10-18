@@ -6,6 +6,7 @@ import torch.optim as optim
 from torchvision import datasets, models, transforms
 import time
 import os
+import json
 import copy
 from ruamel.yaml import YAML
 from dvclive import Live
@@ -84,6 +85,10 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=2, is_incep
 
             if phase == 'train':
                 torch.save(model.state_dict(), "model.pt")
+
+                # Keeping this here so we can see the results in DVC Studio
+                with open("results.json", "w") as fd:
+                    json.dump({'acc': epoch_acc.item(), 'loss': epoch_loss, 'training_time': epoch_time_elapsed}, fd, indent=4)
 
                 dvclive.log('acc', epoch_acc.item())
                 dvclive.log('loss', epoch_loss)

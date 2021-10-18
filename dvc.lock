@@ -8,8 +8,8 @@ stages:
       size: 47404368
       nfiles: 401
     - path: pretrained_model_tuner.py
-      md5: fb838ef72a6c0eb66a3405b06927baeb
-      size: 7166
+      md5: 4899813e787e8cc481ab343b3ce9fe5e
+      size: 7437
     params:
       params.yaml:
         batch_size: 8
@@ -20,9 +20,9 @@ stages:
         num_epochs: 2
     outs:
     - path: model.pt
-      md5: a87234e0422711516c8c530eb59c6986
+      md5: 3076aa3f41a3fd322fd315491941a24e
       size: 2963849
     - path: results
-      md5: 9a43e36f8ea1baf863e01b6062f2396b.dir
+      md5: 763010c4ed15aa22980f72cf93f0cf21.dir
       size: 121
       nfiles: 2
