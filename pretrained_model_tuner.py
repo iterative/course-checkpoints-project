@@ -13,7 +13,7 @@ from dvclive import Live
 dvclive = Live()
 
 # Where the data comes from
-data_dir = "./data"
+data_dir = "./hymenoptera_data"
 
 # Load params.
 with open("params.yaml") as f:
@@ -94,13 +94,12 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=2, is_incep
                 dvclive.log('val_loss', epoch_loss)
 
                 val_acc_history.append(epoch_acc)
-                
-                dvclive.next_step()
 
             if phase == 'val' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())
         
+        dvclive.next_step()
         print()
 
     time_elapsed = time.time() - since
