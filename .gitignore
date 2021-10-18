@@ -1,0 +1,8 @@
+.venv
+data/
+.DS_Store
+results.json
+val_results.json
+/model.pt
+/dvclive
+/results
