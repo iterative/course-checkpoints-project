@@ -6,11 +6,9 @@ import torch.optim as optim
 from torchvision import datasets, models, transforms
 import time
 import os
+import json
 import copy
 from ruamel.yaml import YAML
-from dvclive import Live
-
-dvclive = Live()
 
 # Where the data comes from
 data_dir = "./hymenoptera_data"
@@ -84,22 +82,18 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=2, is_incep
 
             if phase == 'train':
                 torch.save(model.state_dict(), "model.pt")
-
-                dvclive.log('acc', epoch_acc.item())
-                dvclive.log('loss', epoch_loss)
-                dvclive.log('training_time', epoch_time_elapsed)
+                with open("results.json", "w") as fd:
+                    json.dump({'acc': epoch_acc.item(), 'loss': epoch_loss, 'training_time': epoch_time_elapsed}, fd, indent=4)
 
             if phase == 'val':
-                dvclive.log('val_acc', epoch_acc.item())
-                dvclive.log('val_loss', epoch_loss)
-
+                with open("val_results.json", "w") as fd:
+                    json.dump({'acc': epoch_acc.item(), 'loss': epoch_loss}, fd, indent=4)
                 val_acc_history.append(epoch_acc)
 
             if phase == 'val' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())
         
-        dvclive.next_step()
         print()
 
     time_elapsed = time.time() - since

@@ -12,9 +12,7 @@ stages:
       - batch_size
       - num_epochs
     outs:
-      - model.pt:
-          checkpoint: true
-    live:
-      results:
-        summary: true
-        html: true
+      - model.pt
+    metrics:
+    - results.json:
+        cache: false
