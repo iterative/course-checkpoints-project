@@ -16,3 +16,8 @@ stages:
     metrics:
     - results.json:
         cache: false
+    plots:
+    - results.json:
+      cache: false
+      x: loss
+      y: acc
