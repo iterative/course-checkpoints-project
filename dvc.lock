@@ -4,25 +4,24 @@ stages:
     cmd: python pretrained_model_tuner.py
     deps:
     - path: hymenoptera_data/
-      md5: 70257f9e4b0b3ec72deeed5e1b880c3b.dir
-      size: 47404368
-      nfiles: 401
+      md5: 5541a96fc6b9ced1bfc39f068d9e8a4f.dir
+      size: 47385924
+      nfiles: 398
     - path: pretrained_model_tuner.py
-      md5: fb838ef72a6c0eb66a3405b06927baeb
-      size: 7166
+      md5: 6a7177cbfc33bcbe3e0c28d0b9755166
+      size: 7161
     params:
       params.yaml:
         batch_size: 8
         lr: 0.001
         model_name: squeezenet
-        momentum: 0.09
+        momentum: 0.1
         num_classes: 2
         num_epochs: 2
     outs:
     - path: model.pt
-      md5: 153545c43f2640ce4c464110fab1ac41
+      md5: 4bdf64c34035ade371e8ef3c27d1042a
       size: 2963849
-    - path: results
-      md5: da1b606bef8fee6dc396effcdaedb8e3.dir
-      size: 550
-      nfiles: 5
+    - path: results.json
+      md5: 24008e512194e2947b2f6e2edfb5e270
+      size: 105
