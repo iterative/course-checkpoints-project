@@ -5,14 +5,14 @@ jobs:
    runs-on: ubuntu-latest
    container: docker://dvcorg/cml:0-dvc2-base1
    steps:
-      - uses: actions/checkout@v2
-      - name: Train model
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            pip install -r requirements.txt
-            python train.py
+   - uses: actions/checkout@v2
+   - name: Train model
+      env:
+         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         run: |
+         pip install -r requirements.txt
+         python train.py
 
-            cat results/acc.tsv >> report.md
-            cat results/loss.tsv >> report.md
-            cml send-comment report.md
+         cat results/acc.tsv >> report.md
+         cat results/loss.tsv >> report.md
+         cml send-comment report.md
