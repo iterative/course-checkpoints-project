@@ -13,6 +13,6 @@ jobs:
               pip install -r requirements.txt
               python train.py
 
-              cat metrics.txt >> report.md
-              cml publish confusion_matrix.png --md >> report.md
+              cat results/acc.tsv >> report.md
+              cat results/loss.tsv >> report.md
               cml send-comment report.md
