@@ -10,9 +10,9 @@ jobs:
      env:
       REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-      pip install -r requirements.txt
-      python pretrained_model_tuner.py
+         pip install -r requirements.txt
+         python pretrained_model_tuner.py
 
-      cat results/acc.tsv >> report.md
-      cat results/loss.tsv >> report.md
-      cml send-comment report.md
+         cat results/acc.tsv >> report.md
+         cat results/loss.tsv >> report.md
+         cml send-comment report.md
