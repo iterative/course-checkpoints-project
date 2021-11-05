@@ -11,7 +11,7 @@ jobs:
       REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
       pip install -r requirements.txt
-      python train.py
+      python pretrained_model_tuner.py
 
       cat results/acc.tsv >> report.md
       cat results/loss.tsv >> report.md
