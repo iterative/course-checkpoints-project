@@ -13,7 +13,9 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
+          
           dvc get https://github.com/iterative/dataset-registry/ dvc-course/hymenoptera_data
+
           python pretrained_model_tuner.py
 
           dvc metrics show --show-md >> report.md
