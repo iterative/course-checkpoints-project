@@ -13,15 +13,15 @@ stages:
     params:
       params.yaml:
         batch_size: 10
-        lr: 0.01
-        model_name: alexnet
+        lr: 1
+        model_name: squeezenet
         momentum: 0.1
         num_classes: 2
         num_epochs: 2
     outs:
     - path: model.pt
-      md5: 4bffeeae3cb228017e7ed6f6355342b5
-      size: 228053109
+      md5: 4dd800feb897833aeb3ce264026a5857
+      size: 2963849
     - path: results.json
-      md5: b18d1aae5cdfc791b48866389a826a56
-      size: 106
+      md5: b800a95292338499ad9a125b4b864521
+      size: 105
