@@ -1,4 +1,4 @@
-lr: 1
+lr: '1.1'
 momentum: 0.1
 model_name: squeezenet
 num_classes: 2
