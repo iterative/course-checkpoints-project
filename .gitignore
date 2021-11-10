@@ -2,7 +2,6 @@
 hymenoptera_data/
 .DS_Store
 val_results.json
-/results_dvc_plots
 /model.pt
 /dvclive
 /results
