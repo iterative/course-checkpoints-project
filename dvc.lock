@@ -20,9 +20,9 @@ stages:
         num_epochs: 2
     outs:
     - path: model.pt
-      md5: 3076aa3f41a3fd322fd315491941a24e
+      md5: da275164850a828239889c3ead6765f0
       size: 2963849
     - path: results
-      md5: 763010c4ed15aa22980f72cf93f0cf21.dir
-      size: 121
+      md5: 463387add582a9ae9092e1ee12635b26.dir
+      size: 122
       nfiles: 2

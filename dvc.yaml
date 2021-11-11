@@ -18,3 +18,4 @@ stages:
       results:
         summary: true
         html: true
+        cache: false
