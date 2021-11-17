@@ -23,3 +23,18 @@ To see how checkpoints work, switch to the `checkpoints-enabled` branch.
 $ git checkout checkpoints-enabled
 ```
 
+## To work with CML
+
+If you're interested in how you can create your own CI/CD for ML projects, check out the `add-cml` branch.
+
+```dvc
+$ git checkout add-cml
+```
+
+## To follow along with the ODSC West Workshop
+
+If you're here to get the start repo for this workshop, check out the `odsc-west-workshop` branch.
+
+```dvc
+$ git checkout odsc-west-workshop
+```
