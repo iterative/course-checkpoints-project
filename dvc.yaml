@@ -1,0 +1,18 @@
+stages:
+  training:
+    cmd: python pretrained_model_tuner.py
+    deps:
+    - hymenoptera_data/
+    - pretrained_model_tuner.py
+    params:
+    - batch_size
+    - lr
+    - model_name
+    - momentum
+    - num_classes
+    - num_epochs
+    outs:
+    - model.pt
+    metrics:
+    - results.json:
+        cache: false
