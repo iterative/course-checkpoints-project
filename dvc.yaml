@@ -1,9 +1,9 @@
 stages:
   training:
-    cmd: python pretrained_model_tuner.py
+    cmd: python src/pretrained_model_tuner.py
     deps:
     - hymenoptera_data/
-    - pretrained_model_tuner.py
+    - src/pretrained_model_tuner.py
     params:
     - batch_size
     - lr
