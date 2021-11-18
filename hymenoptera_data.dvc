@@ -1,0 +1,12 @@
+md5: 0cfc33035aaef71906dab0d11e5ba3fc
+frozen: true
+deps:
+- path: dvc-course/hymenoptera_data
+  repo:
+    url: https://github.com/iterative/dataset-registry
+    rev_lock: 87e7ef311fd7bb18c5f7d450dc18afaf93d45fda
+outs:
+- md5: 70257f9e4b0b3ec72deeed5e1b880c3b.dir
+  size: 47404368
+  nfiles: 401
+  path: hymenoptera_data
