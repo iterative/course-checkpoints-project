@@ -11,7 +11,8 @@ import copy
 from ruamel.yaml import YAML
 from dvclive import Live
 
-dvclive = Live()
+
+dvclive = Live('results')
 
 # Where the data comes from
 data_dir = "./hymenoptera_data"
@@ -86,17 +87,13 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=2, is_incep
             if phase == 'train':
                 torch.save(model.state_dict(), "model.pt")
 
-                # Keeping this here so we can see the results in DVC Studio
-                with open("results.json", "w") as fd:
-                    json.dump({'acc': epoch_acc.item(), 'loss': epoch_loss, 'training_time': epoch_time_elapsed}, fd, indent=4)
-
-                dvclive.log('acc', epoch_acc.item())
-                dvclive.log('loss', epoch_loss)
-                dvclive.log('training_time', epoch_time_elapsed)
+                dvclive.log_metric('acc', epoch_acc.item())
+                dvclive.log_metric('loss', epoch_loss)
+                dvclive.log_metric('training_time', epoch_time_elapsed)
 
             if phase == 'val':
-                dvclive.log('val_acc', epoch_acc.item())
-                dvclive.log('val_loss', epoch_loss)
+                dvclive.log_metric('val_acc', epoch_acc.item())
+                dvclive.log_metric('val_loss', epoch_loss)
 
                 val_acc_history.append(epoch_acc)
 
